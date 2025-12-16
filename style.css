@@ -73,3 +73,11 @@
 ::-webkit-scrollbar { width: 10px; }
 ::-webkit-scrollbar-track { background: #0f172a; }
 ::-webkit-scrollbar-thumb { background: #5865F2; border-radius: 5px; }
+
+/* عشان نضمن إن الصورة تبان كاملة على الشاشات الكبيرة */
+#home img {
+  object-fit: cover;
+  object-position: center;
+  min-height: 120vh;
+}
+
