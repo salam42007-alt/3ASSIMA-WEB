@@ -1,94 +1,28 @@
-/* Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
-}
-
-body {
-    background-color: #0d0d0d;
-    color: #fff;
-    line-height: 1.6;
-}
-
-/* Header */
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 40px;
-    border-bottom: 2px solid rgba(88, 101, 242,0.6);
-    backdrop-filter: blur(12px);
-}
-
-header .logo img {
-    height: 60px;
-}
-
-nav ul {
-    display: flex;
-    list-style: none;
-    gap: 20px;
-}
-
-nav ul li a {
-    color: #5865F2;
-    text-decoration: none;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-nav ul li a:hover {
-    color: #fff;
-}
-
-/* Hero */
-#hero {
-    text-align: center;
-    padding: 50px 20px;
-    margin: 20px auto;
-    border-radius: 15px;
-}
-
-#hero img {
-    width: 200px;
-    margin-bottom: 20px;
-}
-
+/* Custom CSS */
 .text-glow {
     text-shadow: 0 0 20px rgba(88, 101, 242, 0.7);
 }
 
-/* Glass Cards */
 .glass {
     background-color: rgba(0, 0, 0, 0.4);
     backdrop-filter: blur(12px);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 15px;
+    border-radius: 1rem;
 }
 
 .glass-card {
     background-color: rgba(15, 23, 42, 0.6);
     backdrop-filter: blur(24px);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
-                0 10px 10px -5px rgba(0, 0, 0, 0.04);
-    padding: 30px;
-    margin: 30px auto;
-    border-radius: 15px;
+    box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
+    border-radius: 1rem;
+    padding: 2rem;
 }
 
 /* Animations */
 @keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translate3d(0, 20px, 0);
-    }
-    to {
-        opacity: 1;
-        transform: translate3d(0, 0, 0);
-    }
+    from {opacity:0; transform: translate3d(0,20px,0);}
+    to {opacity:1; transform: translate3d(0,0,0);}
 }
 
 .animate-fade-in-up {
@@ -96,39 +30,17 @@ nav ul li a:hover {
     opacity: 0;
 }
 
-/* Rank Cards */
-.rank-card {
-    padding: 20px;
-    margin: 15px 0;
-    border-radius: 12px;
-    border: 1px solid rgba(88,101,242,0.5);
-    background: rgba(0,0,0,0.3);
+/* Marquee */
+@keyframes marquee {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
 }
-
-/* Footer */
-footer {
-    text-align: center;
-    padding: 20px;
-    border-top: 2px solid rgba(88, 101, 242,0.6);
-    margin-top: 40px;
+.marquee {
+    animation: marquee 30s linear infinite;
 }
 
 /* Scrollbar */
-::-webkit-scrollbar {
-    width: 12px;
-}
-
-::-webkit-scrollbar-track {
-    background: #0f172a;
-    border-left: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-::-webkit-scrollbar-thumb {
-    background: rgba(88, 101, 242, 0.5);
-    border-radius: 6px;
-    border: 3px solid #0f172a;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: #5865F2;
-}
+::-webkit-scrollbar { width: 12px; }
+::-webkit-scrollbar-track { background: #0f172a; border-left:1px solid rgba(255,255,255,0.05); }
+::-webkit-scrollbar-thumb { background: rgba(88,101,242,0.5); border-radius:6px; border:3px solid #0f172a; }
+::-webkit-scrollbar-thumb:hover { background: #5865F2; }
