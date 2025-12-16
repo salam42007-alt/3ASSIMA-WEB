@@ -1,60 +1,174 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>3ASSIMA WEB</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="style.css">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              background: 'hsl(222 47% 11%)',
+              primary: 'hsl(235 86% 65%)',
+              secondary: 'hsl(217 33% 17%)',
+              border: 'rgba(255, 255, 255, 0.1)',
+            },
+            fontFamily: {
+              cairo: ['Cairo', 'sans-serif'],
+            }
+          }
+        }
+      }
+    </script>
 </head>
-<body>
-    <header class="glass">
-        <div class="logo">
-            <img src="images/logo.png" alt="3ASSIMA WEB">
+<body class="bg-background text-white font-cairo overflow-x-hidden">
+
+    <!-- Navbar -->
+    <div class="fixed top-0 left-0 right-0 z-50 flex flex-col">
+        <div class="bg-primary/90 text-white text-xs md:text-sm py-2 overflow-hidden relative z-50 border-b border-white/10 backdrop-blur-sm">
+            <div class="flex whitespace-nowrap">
+                <div class="marquee flex gap-16 px-4 font-bold items-center">
+                    <span>🎉 مرحبًا بك في 3ASSIMA WEB!</span>
+                    <span>💎 خصائص مميزة للسيرفر</span>
+                    <span>🚀 انضم لسيرفر ديسكورد للحصول على الدعم</span>
+                    <span>🎮 استمتع بتجربة المدينة بالكامل</span>
+                </div>
+            </div>
         </div>
-        <nav>
-            <ul>
-                <li><a href="#rules">القوانين</a></li>
-                <li><a href="#commands">الأوامر</a></li>
-                <li><a href="#ranks">الرتب</a></li>
-                <li><a href="#vip">VIP والمتجر</a></li>
-            </ul>
+
+        <nav class="border-b border-white/10 bg-black/40 backdrop-blur-xl w-full transition-all duration-300">
+            <div class="container mx-auto px-4">
+                <div class="flex items-center justify-between h-16">
+                    <a href="#" class="text-xl font-bold text-white flex items-center gap-2 hover:scale-105 transition-transform">
+                        <span class="text-primary text-2xl drop-shadow-[0_0_10px_rgba(88,101,242,0.5)]">⚡</span>
+                        3ASSIMA WEB
+                    </a>
+
+                    <div class="hidden md:flex items-center gap-8">
+                        <a href="#rules" class="text-gray-300 hover:text-white hover:text-glow transition-all text-sm font-medium flex items-center gap-2 relative group">القوانين</a>
+                        <a href="#commands" class="text-gray-300 hover:text-white hover:text-glow transition-all text-sm font-medium flex items-center gap-2 relative group">الأوامر</a>
+                        <a href="#ranks" class="text-gray-300 hover:text-white hover:text-glow transition-all text-sm font-medium flex items-center gap-2 relative group">الرتب</a>
+                        <a href="#vip" class="text-gray-300 hover:text-white hover:text-glow transition-all text-sm font-medium flex items-center gap-2 relative group">VIP والمتجر</a>
+                    </div>
+
+                    <button id="mobile-menu-btn" class="md:hidden text-white p-2 hover:bg-white/10 rounded-lg transition-colors">
+                        <i data-lucide="menu"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div id="mobile-menu" class="hidden md:hidden glass border-t border-white/10 p-4 absolute w-full top-full bg-slate-900/95">
+                <div class="flex flex-col gap-4">
+                    <a href="#rules" class="text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition-all block py-3 text-center">القوانين</a>
+                    <a href="#commands" class="text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition-all block py-3 text-center">الأوامر</a>
+                    <a href="#ranks" class="text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition-all block py-3 text-center">الرتب</a>
+                    <a href="#vip" class="text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition-all block py-3 text-center">VIP والمتجر</a>
+                </div>
+            </div>
         </nav>
-    </header>
+    </div>
 
-    <section id="hero" class="glass animate-fade-in-up">
-        <img src="images/server.png" alt="صورة السيرفر">
-        <h1 class="text-glow">مرحبا بك في 3ASSIMA WEB</h1>
-        <p>كل ما تحتاجه لتنظيم السيرفر والاستفادة من الميزات الخاصة</p>
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center pt-24 pb-12">
+        <div class="container mx-auto px-4 relative z-10 grid lg:grid-cols-2 gap-12 items-center">
+            <div class="text-center lg:text-right space-y-6 animate-fade-in-up">
+                <h1 class="text-4xl md:text-6xl font-bold text-white text-glow leading-tight">
+                    مرحبًا بك في <br/>
+                    <span class="text-primary">3ASSIMA WEB</span>
+                </h1>
+                <p class="text-gray-200 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                    كل ما تحتاجه لتنظيم السيرفر والاستفادة من الميزات الخاصة.
+                </p>
+            </div>
+
+            <div class="flex justify-center animate-fade-in-up" style="animation-delay: 0.2s;">
+                <div class="glass-card p-8 rounded-2xl w-full max-w-md text-center space-y-6 border-t border-white/20">
+                    <div class="space-y-2">
+                        <h3 class="text-2xl font-bold text-primary">التواصل والدعم الفني</h3>
+                        <p class="text-gray-400">للتواصل معنا مباشرة على ديسكورد</p>
+                    </div>
+                    <button onclick="window.open('https://discord.com', '_blank')" 
+        class="w-full h-14 text-lg font-bold bg-[#5865F2] hover:bg-[#4752C4] shadow-lg shadow-[#5865F2]/20 transition-all hover:scale-105 rounded-lg flex items-center justify-center gap-2 text-white">
+    <i data-lucide="message-circle" class="w-6 h-6"></i>
+    فتح تذكرة ديسكورد
+</button>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section id="rules" class="glass-card animate-fade-in-up">
-        <h2 class="text-glow">قوانين السيرفر</h2>
-        <ul id="rules-list"></ul>
+    <!-- Rules Section -->
+    <section class="py-24 bg-background relative z-10" id="rules">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold mb-4 text-white">قوانين السيرفر</h2>
+                <div class="h-1 w-24 bg-primary mx-auto rounded-full mt-6"></div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-6">
+                <ul id="rules-list" class="space-y-4 text-gray-300 text-lg"></ul>
+            </div>
+        </div>
     </section>
 
-    <section id="commands" class="glass-card animate-fade-in-up">
-        <h2 class="text-glow">أوامر المدينة</h2>
-        <ul id="commands-list"></ul>
+    <!-- Commands Section -->
+    <section class="py-24 bg-black/20 relative z-10" id="commands">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold mb-4 text-white">أوامر المدينة</h2>
+                <div class="h-1 w-24 bg-primary mx-auto rounded-full mt-6"></div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-6">
+                <ul id="commands-list" class="space-y-4 text-gray-300 text-lg"></ul>
+            </div>
+        </div>
     </section>
 
-    <section id="ranks" class="glass-card animate-fade-in-up">
-        <h2 class="text-glow">الرتب وصلاحياتها</h2>
-        <div class="rank-card glass-card" id="vip-card"></div>
-        <div class="rank-card glass-card" id="admin-card"></div>
+    <!-- Ranks Section -->
+    <section class="py-24 bg-background relative z-10" id="ranks">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold mb-4 text-white">الرتب وصلاحياتها</h2>
+                <div class="h-1 w-24 bg-primary mx-auto rounded-full mt-6"></div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div id="vip-card" class="glass p-8 rounded-3xl relative border border-white/10 hover:border-white/20 transition-all hover:-translate-y-2"></div>
+                <div id="admin-card" class="glass p-8 rounded-3xl relative border border-white/10 hover:border-white/20 transition-all hover:-translate-y-2"></div>
+            </div>
+        </div>
     </section>
 
-    <section id="vip" class="glass-card animate-fade-in-up">
-        <h2 class="text-glow">VIP والمتجر</h2>
-        <p>شراء سيارات منازل ومتاجر</p>
-        <p>ألوان المتجر: أزرق - أسود - أبيض</p>
-        <p>طرق الدفع: فليكسي أو دجيزي عن طريق اتصال أو انترنت</p>
-        <p>سعر الرتبة: 100 دينار جزائري (10 الاف بالعامية)</p>
+    <!-- VIP Section -->
+    <section class="py-24 bg-black/20 relative z-10" id="vip">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold mb-4 text-white">VIP والمتجر</h2>
+                <div class="h-1 w-24 bg-primary mx-auto rounded-full mt-6"></div>
+                <p class="text-gray-400 text-lg mt-4">شراء سيارات، منازل، ومتاجر. الدفع عبر فليكسي أو دجيزي.</p>
+            </div>
+        </div>
     </section>
 
-    <footer class="glass">
-        <p>© 2025 3ASSIMA WEB جميع الحقوق محفوظة</p>
+    <!-- Footer -->
+    <footer class="py-12 bg-black/40 border-t border-white/10">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-2xl font-bold text-white mb-4 flex justify-center items-center gap-2">
+                <span class="text-primary">⚡</span> 3ASSIMA WEB
+            </h2>
+            <p class="text-gray-400 mb-8">جميع الحقوق محفوظة © 2025</p>
+        </div>
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
 </body>
 </html>
