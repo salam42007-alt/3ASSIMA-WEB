@@ -1,3 +1,30 @@
+// Mobile Menu Toggle
+const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+const mobileMenu = document.getElementById('mobile-menu');
+
+if (mobileMenuBtn && mobileMenu) {
+    mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+}
+
+// Smooth Scroll
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+            if (!mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.add('hidden');
+            }
+            targetElement.scrollIntoView({ behavior: 'smooth' });
+        }
+    });
+});
+
 // القوانين
 const rules = [
     "ممنوع سب و شتم",
@@ -64,5 +91,22 @@ commands.forEach(command => {
 });
 
 // الرتب
-document.getElementById('vip-card').textContent = "VIP: يستلم فلوس، يمكنه شراء سيارات منازل ومتاجر";
-document.getElementById('admin-card').textContent = "MANAGER ADMIN: صلاحيات كاملة للتحكم بالأدمين وإدارة كل شيء داخل السيرفر";
+document.getElementById('vip-card').innerHTML = `
+    <h3 class="text-2xl font-bold mb-2 text-yellow-400">VIP</h3>
+    <div class="text-xl font-bold text-white mb-2">يحصل على فلوس ويستفيد من المزايا</div>
+    <ul class="space-y-3 text-gray-300">
+        <li>اسم ملون</li>
+        <li>دخول السيرفر الممتلئ</li>
+        <li>خيارات خاصة في المتجر</li>
+    </ul>
+`;
+
+document.getElementById('admin-card').innerHTML = `
+    <h3 class="text-2xl font-bold mb-2 text-red-500">MANAGER ADMIN</h3>
+    <div class="text-xl font-bold text-white mb-2">صلاحيات كاملة للتحكم بالأدمين</div>
+    <ul class="space-y-3 text-gray-300">
+        <li>تحكم كامل بالرتب</li>
+        <li>إدارة السيرفر</li>
+        <li>إضافة وحذف أعضاء</li>
+    </ul>
+`;
