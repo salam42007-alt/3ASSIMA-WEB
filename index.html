@@ -3,113 +3,171 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>3ASSIMA WEB</title>
-    <link rel="stylesheet" href="style.css">
+    <title>3ASSIMA WEB - متجر السيرفر</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
-    <script src="script.js" defer></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              background: 'hsl(222 47% 11%)',
+              primary: 'hsl(235 86% 65%)',
+              secondary: 'hsl(217 33% 17%)',
+              border: 'rgba(255, 255, 255, 0.1)',
+              bluepage: 'rgba(88,101,242,0.2)',
+              blue-dark1: 'rgba(88,101,242,0.3)',
+              blue-dark2: 'rgba(88,101,242,0.4)'
+            },
+            fontFamily: {
+              cairo: ['Cairo', 'sans-serif'],
+            }
+          }
+        }
+      }
+    </script>
 </head>
-<body class="font-cairo text-white overflow-x-hidden">
+<body class="bg-background text-white font-cairo overflow-x-hidden">
 
     <!-- Navbar -->
-    <header class="fixed top-0 left-0 right-0 z-50">
-        <nav class="flex items-center justify-between p-4 bg-black/40 backdrop-blur-xl border-b border-white/10">
-            <a href="#home" class="flex items-center gap-2">
-                <img src="image/logo.webp" alt="Logo" class="w-10 h-10">
-                <span class="text-xl font-bold text-glow text-white">3ASSIMA WEB</span>
-            </a>
-            <div class="hidden md:flex gap-6">
-                <a href="#home" class="hover:text-primary transition">الرئيسية</a>
-                <a href="#ranks" class="hover:text-blue-400 transition">الرتب</a>
-                <a href="#rules" class="hover:text-blue-500 transition">القوانين</a>
-                <a href="#commands" class="hover:text-blue-600 transition">الأوامر</a>
-                <a href="#contact" class="hover:text-blue-700 transition">تواصل</a>
-            </div>
-            <button id="mobile-menu-btn" class="md:hidden text-white p-2 rounded-lg hover:bg-white/10">
-                <i data-lucide="menu"></i>
-            </button>
-        </nav>
-        <div id="mobile-menu" class="hidden md:hidden flex flex-col bg-black/80 backdrop-blur-lg p-4 gap-2">
-            <a href="#home" class="py-2 hover:text-primary transition">الرئيسية</a>
-            <a href="#ranks" class="py-2 hover:text-blue-400 transition">الرتب</a>
-            <a href="#rules" class="py-2 hover:text-blue-500 transition">القوانين</a>
-            <a href="#commands" class="py-2 hover:text-blue-600 transition">الأوامر</a>
-            <a href="#contact" class="py-2 hover:text-blue-700 transition">تواصل</a>
-        </div>
-    </header>
+    <div class="fixed top-0 left-0 right-0 z-50 flex flex-col">
+        <nav class="border-b border-white/10 bg-black/40 backdrop-blur-xl w-full transition-all duration-300">
+            <div class="container mx-auto px-4">
+                <div class="flex items-center justify-between h-16">
+                    <!-- Logo -->
+                    <a href="#" class="flex items-center gap-2">
+                        <img src="image/logo.webp" alt="Logo" class="w-12 h-12">
+                        <span class="text-xl font-bold text-white text-glow">3ASSIMA WEB</span>
+                    </a>
 
-    <!-- Home Section -->
-    <section id="home" class="relative min-h-screen flex items-center justify-center pt-24">
-        <img src="image/server.webp" alt="Server Background" class="absolute inset-0 w-full h-full object-cover">
-        <div class="absolute inset-0 bg-gradient-to-b from-black/70 to-black/40"></div>
-        <div class="relative z-10 text-center space-y-6 animate-fade-in-up">
-            <h1 class="text-5xl md:text-7xl font-bold text-glow text-white">
-                مرحبًا بك في <span class="text-primary">3ASSIMA WEB</span>
-            </h1>
-            <p class="text-gray-300 text-lg md:text-xl max-w-2xl mx-auto">
-                موقع يقدم لك إدارة كاملة للسيرفر، عرض القوانين، الأوامر، والرتب بشكل عصري وسهل الاستخدام
-            </p>
+                    <!-- Desktop Nav -->
+                    <div class="hidden md:flex items-center gap-8">
+                        <a href="#" class="nav-link">رئيسية</a>
+                        <a href="#ranks" class="nav-link">رتب</a>
+                        <a href="#rules" class="nav-link">قوانين</a>
+                        <a href="#commands" class="nav-link">أوامر</a>
+                        <a href="#contact" class="nav-link">تواصل</a>
+                    </div>
+
+                    <!-- Mobile Menu Button -->
+                    <button id="mobile-menu-btn" class="md:hidden text-white p-2 hover:bg-white/10 rounded-lg transition-colors">
+                        <i data-lucide="menu"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Nav -->
+            <div id="mobile-menu" class="hidden md:hidden glass border-t border-white/10 p-4 absolute w-full top-full bg-slate-900/95">
+                <div class="flex flex-col gap-4">
+                    <a href="#" class="mobile-link">رئيسية</a>
+                    <a href="#ranks" class="mobile-link">رتب</a>
+                    <a href="#rules" class="mobile-link">قوانين</a>
+                    <a href="#commands" class="mobile-link">أوامر</a>
+                    <a href="#contact" class="mobile-link">تواصل</a>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center pt-24 pb-12">
+        <div class="absolute inset-0 z-0">
+            <img src="image/server.webp" alt="Server Background" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-background"></div>
+        </div>
+
+        <div class="container mx-auto px-4 relative z-10 grid lg:grid-cols-2 gap-12 items-center">
+            <div class="text-center lg:text-right space-y-6 animate-fade-in-up">
+                <h1 class="text-4xl md:text-6xl font-bold text-white text-glow leading-tight">
+                    مرحبًا بك في <br/>
+                    <span class="text-primary">3ASSIMA WEB!</span>
+                </h1>
+                <p class="text-gray-200 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                    موقع مخصص لسيرفر الديسكورد الخاص بك، مع عرض الرتب، القوانين، الأوامر، وإمكانية التواصل مباشرة مع الإدارة.
+                </p>
+            </div>
         </div>
     </section>
 
     <!-- Ranks Section -->
-    <section id="ranks" class="py-24 bg-blue-800/70">
+    <section class="py-24 relative z-10" id="ranks">
         <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center mb-12">الرتب</h2>
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold mb-4 text-white">الرتب</h2>
+                <p class="text-gray-400 text-lg">رتب السيرفر مع خصائص مميزة</p>
+            </div>
+
             <div class="grid md:grid-cols-2 gap-8">
-                <!-- Rank 1 -->
-                <div class="glass p-6 rounded-2xl border border-white/10 hover:border-blue-400 transition">
-                    <h3 class="text-2xl font-bold text-blue-400 mb-2 text-center">رتبة VIP</h3>
-                    <p class="text-xl text-center mb-4">السعر: 10,000 دينار</p>
-                    <ul class="space-y-2 text-gray-300">
-                        <li>- مميزات كاملة للسيرفر</li>
-                        <li>- تميز عن الآخرين</li>
+                <!-- VIP -->
+                <div class="glass p-8 rounded-3xl relative border border-white/10 hover:border-white/20 transition-all hover:-translate-y-2 bg-bluepage">
+                    <div class="text-center mb-8">
+                        <h3 class="text-2xl font-bold mb-2 text-yellow-400">VIP</h3>
+                        <div class="text-4xl font-bold text-white mb-2">10,000 دج</div>
+                        <div class="text-gray-500 text-sm">مدى الحياة</div>
+                    </div>
+                    <ul class="space-y-4 mb-8 text-gray-300">
+                        <li>استلام فلوس</li>
                     </ul>
+                    <button class="w-full h-12 text-lg font-bold transition-all bg-white/10 hover:bg-white/20 rounded-lg text-white">اشترك الآن</button>
                 </div>
-                <!-- Rank 2 -->
-                <div class="glass p-6 rounded-2xl border border-white/10 hover:border-blue-500 transition">
-                    <h3 class="text-2xl font-bold text-blue-500 mb-2 text-center">رتبة MANAGER ADMIN</h3>
-                    <p class="text-xl text-center mb-4">السعر: 10,000 دينار</p>
-                    <ul class="space-y-2 text-gray-300">
-                        <li>- تحكم كامل في الأدمين</li>
-                        <li>- إمكانية بيع الأشياء في السيرفر</li>
+
+                <!-- MANAGER ADMIN -->
+                <div class="glass p-8 rounded-3xl relative border border-white/10 hover:border-white/20 transition-all hover:-translate-y-2 bg-blue-dark1">
+                    <div class="text-center mb-8">
+                        <h3 class="text-2xl font-bold mb-2 text-red-400">MANAGER ADMIN</h3>
+                        <div class="text-4xl font-bold text-white mb-2">10,000 دج</div>
+                        <div class="text-gray-500 text-sm">مدى الحياة</div>
+                    </div>
+                    <ul class="space-y-4 mb-8 text-gray-300">
+                        <li>صلاحيات كاملة على الرتب</li>
+                        <li>إدارة السيرفر</li>
                     </ul>
+                    <button class="w-full h-12 text-lg font-bold transition-all bg-white/10 hover:bg-white/20 rounded-lg text-white">اشترك الآن</button>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Rules Section -->
-    <section id="rules" class="py-24 bg-blue-700/70">
+    <section class="py-24 bg-blue-dark2 relative z-10" id="rules">
         <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center mb-12">القوانين</h2>
-            <ul class="space-y-3 text-gray-200 text-lg">
-                <li>[1] ممنوع سب و شتم</li>
-                <li>[2] ممنوع مضايقة الاخرين</li>
-                <li>[3] ممنوع تحدث عن أمور دينية</li>
-                <li>[4] ممنوع تحدث خارج Rp</li>
-                <li>[5] ممنوع مضايقة المسؤولين</li>
-                <li>[6] يمنع طلب الرتب او الكريدت</li>
-                <li>[7] ممنوع التكلم عن مدينة 🏙️ أخرى غير مدينتنا</li>
-                <li>[8] يمنع الإزعاج بالرومات الصوتية بأي شكل من أشكال</li>
-                <li>[9] يمنع إرسال صور أو ايموجيات مقرفة في الشات</li>
-                <li>[10] ممنوع نشر الشكاوي في الشات العام</li>
-                <li>[11] ممنوع وضع شعار سيرفر أو مدينة أخرى</li>
-                <li>[12] ممنوع ترويج لي سيرفرات و مدن آخرى هنا</li>
-                <li>[13] التزام بمحتوى شات مثل (الشات العام للدردشة و شات الصور لصور فقط)</li>
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold mb-4 text-white">قوانين السيرفر</h2>
+            </div>
+            <ul class="list-decimal list-inside text-gray-200 space-y-2">
+                <li>ممنوع سب و شتم</li>
+                <li>ممنوع مضايقة الاخرين</li>
+                <li>ممنوع تحدث عن أمور دينية</li>
+                <li>ممنوع تحدث خارج Rp</li>
+                <li>ممنوع مضايقة المسؤولين</li>
+                <li>يمنع طلب الرتب او الكريدت</li>
+                <li>ممنوع التكلم عن مدينة 🏙️ أخرى غير مدينتنا</li>
+                <li>يمنع الإزعاج بالرومات الصوتية بأي شكل من أشكال</li>
+                <li>يمنع إرسال صور أو ايموجيات مقرفة في الشات</li>
+                <li>ممنوع نشر الشكاوي في الشات العام</li>
+                <li>ممنوع وضع شعار سيرفر أو مدينة أخرى</li>
+                <li>ممنوع ترويج لي سيرفرات و مدن آخرى هنا</li>
+                <li>الالتزام بمحتوى شات مثل (الشات العام للدردشة و شات الصور لصور فقط)</li>
             </ul>
         </div>
     </section>
 
     <!-- Commands Section -->
-    <section id="commands" class="py-24 bg-blue-600/70">
+    <section class="py-24 bg-blue-dark2 relative z-10" id="commands">
         <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center mb-12">الأوامر</h2>
-            <ul class="space-y-2 text-gray-200 text-lg">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold mb-4 text-white">أوامر المدينة</h2>
+            </div>
+            <ul class="list-disc list-inside text-gray-200 space-y-2">
                 <li>/location أمر تحديد موقع العمل</li>
                 <li>/Showid [ccp] أمر إعطاء بطاقة تعريف الوطنية</li>
                 <li>/Pay [ccp] (المبلغ) أمر إعطاء المال</li>
                 <li>/handsup لرفع يديك</li>
-                <li>/Fixvw اذا كنت لا ترا الاعبين</li>
+                <li>/Fixvw اذا كنت لا ترا اللاعبين</li>
                 <li>/Lock لقفل وفتح سيارتك</li>
                 <li>/join أمر لتعمل</li>
                 <li>/Buyhouse لشراء منزل</li>
@@ -118,21 +176,21 @@
                 <li>/Stuck اذا كنت معلق</li>
                 <li>/rdm لطب ادمن</li>
                 <li>/quitjob تخرج من العمل</li>
-                <li>/inv حقيبه</li>
+                <li>/inv حقيبة</li>
                 <li>/buy لشراء شئ من متجر</li>
-                <li>/sell لي بيع  شيء</li>
-                <li>/use repairkit لتصليح السيارت</li>
+                <li>/sell لبيع شيء</li>
+                <li>/use repairkit لتصليح السيارات</li>
                 <li>/give [ccp] (اسم الشيء)</li>
-                <li>/vstash لفتح خيزنت السيارت</li>
-                <li>/buylevel لشرئ مستوي الشخصي</li>
-                <li>/locate لظهر ال gps</li>
-                <li>/skill لظهر مستوك في اعمل</li>
-                <li>/drop لي رمي الاشئ في الارض</li>
-                <li>/quitjob تخرج من خدمة</li>
-                <li>/gang quit confirm تخرج من العصابه</li>
+                <li>/vstash لفتح خزينه السيارات</li>
+                <li>/buylevel لشراء مستوى الشخصي</li>
+                <li>/locate لظهور GPS</li>
+                <li>/skill لعرض مستواك في الأعمال</li>
+                <li>/drop لرمي الأشياء في الأرض</li>
+                <li>/quitjob تخرج من الخدمة</li>
+                <li>/gang quit confirm تخرج من العصابة</li>
                 <li>/faction quit confirm تخرج من عمل في إطار الحكومة</li>
-                <li>/fiandcar معرفه مكان سيارتك</li>
-                <li>/phone ترفد تيليفون</li>
+                <li>/fiandcar لمعرفة مكان سيارتك</li>
+                <li>/phone لرفع تيليفون</li>
                 <li>/changepass لتغيير كلمة السر</li>
                 <li>/buy شراء من المحل</li>
             </ul>
@@ -140,15 +198,30 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-24 bg-blue-500/70">
+    <section class="py-24 bg-blue-dark2 relative z-10" id="contact">
         <div class="container mx-auto px-4 text-center">
-            <h2 class="text-4xl font-bold mb-8">تواصل معنا</h2>
-            <button onclick="window.open('https://discord.com', '_blank')" 
-                class="px-6 py-3 bg-primary rounded-lg text-white hover:bg-primary/80 transition">
-                فتح تذكرة ديسكورد
+            <h2 class="text-3xl md:text-5xl font-bold mb-4 text-white">تواصل معنا</h2>
+            <button onclick="window.open('https://discord.com/channels/1446147214891286663/1449385976630608017', '_blank')" 
+            class="w-full h-14 text-lg font-bold bg-[#5865F2] hover:bg-[#4752C4] shadow-lg shadow-[#5865F2]/20 transition-all hover:scale-105 rounded-lg flex items-center justify-center gap-2 text-white">
+            فتح تذكرة ديسكورد
             </button>
+            <p class="text-xs text-gray-500 mt-2">(يفتح الرابط في نافذة جديدة)</p>
         </div>
     </section>
 
+    <!-- Footer -->
+    <footer class="py-12 bg-black/40 border-t border-white/10">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-2xl font-bold text-white mb-4 flex justify-center items-center gap-2">
+                <span class="text-primary">⚡</span> 3ASSIMA WEB
+            </h2>
+            <p class="text-gray-400 mb-8">جميع الحقوق محفوظة © 2025</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
 </body>
 </html>
